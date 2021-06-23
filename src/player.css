@@ -8,7 +8,7 @@
 .ImgDiv {
   margin: auto;
   position: relative;
-  width: 50%;
+  width: 40%;
   padding-top: 0%;
   padding-left: 360px;
 }
@@ -32,18 +32,19 @@
   position: relative;
 }
 .imageButton {
+  font-weight:bold;
   position: absolute;
   font-family: 'Trebuchet MS', sans-serif;
   background-color: #fdfdfd;
   border: none;
-  color: rgb(0, 0, 0);
+
 
   width: 150px;
   height: 30px;
   top:-200px;
   left: 300px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
 
   border-radius: 20px;
 }
@@ -72,7 +73,7 @@
 
   width: 150px;
   height: 30px;
-  top:-225gitpx;
+  top:-225px;
   left: 300px;
   text-align: center;
   font-size: 20px;

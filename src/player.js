@@ -3,7 +3,7 @@ import React from 'react';
 import './player.css';
 import YouTube from 'react-youtube';
 
-const Player = (({imgURL, embedId}) => {
+const Player = (({imgURL, embedId, Title, Location}) => {
   function click(e) {
       
     const player = document.getElementById('player');
@@ -31,8 +31,8 @@ const Player = (({imgURL, embedId}) => {
                 <img className="img" src={imgURL}  width="720" height="400"/>
                 <br/>
                 <div className="InfoDiv">
-                    <b className="Name">TEST ATT TESTA</b>
-                    <b className="Location">TEST2</b>
+                    <b className="Name">{Title}</b>
+                    <b className="Location">{Location}</b>
                     <button className="imageButton" width="100px" id="play-fullscreen" onClick={click}>TA MIG DIT</button>
                 </div>
              </div>
