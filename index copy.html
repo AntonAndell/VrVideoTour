@@ -18,33 +18,13 @@
                         myVideo.play()
                         imagescroller.setAttribute('visible', false);
                         videocontrols.setAttribute('src',  "#pause")
-
-
                     }
                     else {
                         myVideo.pause()
                         imagescroller.setAttribute('visible',  true)
                         videocontrols.setAttribute('src',  "#play")
-                        videocontrols.setAttribute('material',  "opacity: 1.0")
                     }
                 })
-                this.el.addEventListener('mouseenter', function (){
-                    var videocontrols = document.querySelector("#videoControls")
-                    if (videocontrols.getAttribute("src") == "#pause"){
-                        videocontrols.setAttribute('material',  "opacity: 1.0")
-                    }
-                    
-                })
-                this.el.addEventListener('mouseleave', function (){
-                    
-                    var videocontrols = document.querySelector("#videoControls")
-                    if (videocontrols.getAttribute("src") == "#pause"){
-                        videocontrols.setAttribute('material',  "opacity: 0.15")
-                    }
-                  
-                    
-                })
-                
               
             }
         })
@@ -53,9 +33,8 @@
                
                 
                 this.el.addEventListener('click', function (evt){
-                    var imagescroller = document.querySelector("#imagescroller");
                     var mySphere = document.querySelector("#videosphere")
-                    if (this.id == evt.target.id && imagescroller.getAttribute('visible')){
+                    if (this.id == evt.target.id){
 
                         var prevVideo = document.querySelector(mySphere.getAttribute("src"));
                         var videocontrols = document.querySelector("#videoControls")
@@ -106,26 +85,21 @@
       </a-camera>
 
       <a-videosphere id="videosphere" src=#segling-vid rotation="0 -90 0" ></a-videosphere>
-      <a-entity id="imagescroller" position="0 3 -2" rotation="0 0 0" >
-        <a-entity   >
-  
-            <a-curvedimage id="img1" src="#segling" vidsrc="#segling-vid"   height="5" radius="10" theta-length="60" theta-start="60" pic></a-curvedimage>
-           
+      <a-entity id="imagescroller" position="-5 3 -4" rotation="0 0 0" >
+        <a-entity  position="-1 0 1"  rotation="0 20 0" >
+            <a-image id="img1" src="#segling" vidsrc="#segling-vid" width="4" height="2"  pic/>
         </a-entity>
-        <a-entity  >
-            <a-curvedimage id="img2" src="#skog" vidsrc="#skog-vid"   height="5" radius="10" theta-length="60" theta-start="120" pic></a-curvedimage>
-        
+        <a-entity  position="3 0 0"  rotation="0 10 0" >
+            <a-image id="img2" src="#skog" vidsrc="#skog-vid" width="4" height="2"     pic/>
         </a-entity>
-        <a-entity  >
-            <a-curvedimage id="img3" src="#strand" vidsrc="#strand-vid"  height="5" radius="10" theta-length="60" theta-start="180" pic></a-curvedimage>
-           
+        <a-entity  position="7 0 0"  rotation="0 -10 0" >
+            <a-image id="img3" src="#strand" vidsrc="#strand-vid" width="4" height="2"  pic/>
          </a-entity>
-        <a-entity >
-            <a-curvedimage id="img4"  src="#bubbel" vidsrc="#bubbel-vid"  height="5" radius="10" theta-length="60" theta-start="240" pic></a-curvedimage>
-          
+        <a-entity  position="11 0 1"  rotation="0 -20 0" >
+            <a-image id="img4"  src="#bubbel" vidsrc="#bubbel-vid" width="4" height="2"  pic/>
         </a-entity>
     </a-entity>
-      <a-image id="videoControls" material="opacity: 1.0" src="#play" position="0 1 -3" height="0.4" width="1.8" play-pause/>
+      <a-image id="videoControls" src="#play" position="0 1.3 -3" height="0.4" width="1.8" play-pause/>
     </a-scene >
     </body>
 </html>
