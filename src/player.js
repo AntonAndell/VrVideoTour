@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './player.css';
-import YouTube from 'react-youtube';
+
 
 const Player = (({imgURL, embedId, Title, Location}) => {
   function click(e) {
