@@ -38,6 +38,7 @@
 
                         var prevVideo = document.querySelector(mySphere.getAttribute("src"));
                         var videocontrols = document.querySelector("#videoControls")
+
                         prevVideo.pause()
                         var myVideo = document.querySelector(this.getAttribute("vidsrc"));
                         console.log("here")
@@ -63,23 +64,40 @@
   <body>
     <a-scene >
         <a-asset>
-            <img id="play"  crossorigin="anonymous" src="http://127.0.0.1:8887/play-button.png">
-            <img id="templeone"  crossorigin="anonymous" src="http://127.0.0.1:8887/temple1.jpg">
-            <img id="templetwo"  crossorigin="anonymous" src="http://127.0.0.1:8887/temple2.jpg">
-            <img id="pause" crossorigin="anonymous" src="http://127.0.0.1:8887/pause-button.png">
-            <video id="testvid" crossorigin="anonymous" src="http://127.0.0.1:8887/test-video.mp4" loop="true"></video>
-            <video id="testvidtwo" crossorigin="anonymous" src="http://127.0.0.1:8887/test-video2.mp4" loop="true"></video>
+            <img id="play"  crossorigin="anonymous" src="https://127.0.0.1:8080/assets/play-button.png">
+            <img id="pause" crossorigin="anonymous" src="https://127.0.0.1:8080/assets/pause-button.png">
+
+            <img id="segling"  crossorigin="anonymous" src="https://127.0.0.1:8080/assets/segling.png">
+            <video id="segling-vid" crossorigin="anonymous" src="https://127.0.0.1:8080/assets/sail.mp4" loop="true"></video>
+
+            <img id="skog"  crossorigin="anonymous" src="https://127.0.0.1:8080/assets/skog.png">
+            <video id="skog-vid" crossorigin="anonymous" src="https://127.0.0.1:8080/assets/forest.mp4" loop="true"></video>
+
+            <img id="strand"  crossorigin="anonymous" src="https://127.0.0.1:8080/assets/strand.png">
+            <video id="strand-vid" crossorigin="anonymous" src="https://127.0.0.1:8080/assets/test-video.mp4" loop="true"></video>
+
+            <img id="bubbel"  crossorigin="anonymous" src="https://127.0.0.1:8080/assets/bubbelskoj.png">
+            <video id="bubbel-vid" crossorigin="anonymous" src="https://127.0.0.1:8080/assets/test-video2.mp4" loop="true"></video>
         </a-asset>
       <a-camera>
         <a-cursor geometry='primitive: ring', material='color: #FFC0CB;\
         shader: flat'></a-cursor>
       </a-camera>
 
-      <a-videosphere id="videosphere" src=#testvid rotation="0 -90 0" ></a-videosphere>
-      <a-entity id="imagescroller" position="-2 3 -3" rotation="10 0 0" >
-        <a-image id="baseimga" src="#templeone" vidsrc="#testvid" width="3" height="2" position="-1 0 0" pic/>
-        <a-image id="baseimgb" src="#templetwo" vidsrc="#testvidtwo" width="3" height="2" position="3 0 0"  pic/>
-        <a-image id="baseimgc" src="#templeone" vidsrc="#testvid" width="3" height="2" position="3 0 0" pic/>
+      <a-videosphere id="videosphere" src=#segling-vid rotation="0 -90 0" ></a-videosphere>
+      <a-entity id="imagescroller" position="-5 3 -4" rotation="0 0 0" >
+        <a-entity  position="-1 0 1"  rotation="0 20 0" >
+            <a-image id="img1" src="#segling" vidsrc="#segling-vid" width="4" height="2"  pic/>
+        </a-entity>
+        <a-entity  position="3 0 0"  rotation="0 10 0" >
+            <a-image id="img2" src="#skog" vidsrc="#skog-vid" width="4" height="2"     pic/>
+        </a-entity>
+        <a-entity  position="7 0 0"  rotation="0 -10 0" >
+            <a-image id="img3" src="#strand" vidsrc="#strand-vid" width="4" height="2"  pic/>
+         </a-entity>
+        <a-entity  position="11 0 1"  rotation="0 -20 0" >
+            <a-image id="img4"  src="#bubbel" vidsrc="#bubbel-vid" width="4" height="2"  pic/>
+        </a-entity>
     </a-entity>
       <a-image id="videoControls" src="#play" position="0 1.3 -3" height="0.4" width="1.8" play-pause/>
     </a-scene >
